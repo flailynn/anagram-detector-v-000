@@ -9,10 +9,10 @@ class Anagram
   end
 
   def match(anagrams)
-    letters = @word.split(//).sort
+    letters = @word.split(//)
     anagrams.select do |anagram|
-      binding.pry
-      anagram if @word.split.sort == anagram.split.sort
+      anagram_letters = anagram.split(//)
+      anagram if anagram_letters.sort == letters.sort
     end
   end
 end
